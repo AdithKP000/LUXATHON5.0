@@ -1475,31 +1475,44 @@
 
           
                      <!-- prizes mobile -->
-                    <script>
-                      const toggleButton = document.querySelector('.toggle-button');
+                  <!-- <script>
+                     toggleButton = document.querySelector('.toggle-button');
                   const navbarLinks = document.querySelector('.navbar-links');
+                  const navbarItems = document.querySelectorAll('.navbar-links li'); // Select all <li> elements inside navbar
 
+                  // Add a flag to track the state
+                  let isNavbarOpen = false;
+
+                  // Open the navbar when the toggle button is clicked
                   toggleButton.addEventListener('click', () => {
-                    navbarLinks.classList.toggle('active');
+                    if (!isNavbarOpen) {
+                      navbarLinks.classList.add('active'); // Add the 'active' class to open the navbar
+                      isNavbarOpen = true; // Update the state
+                    }
                   });
+
+                  // Close the navbar when any <li> inside it is clicked
+                  navbarItems.forEach((item) => {
+                    item.addEventListener('click', () => {
+                      navbarLinks.classList.remove('active'); // Remove the 'active' class to close the navbar
+                      isNavbarOpen = false; // Reset the state
+                    });
+                  });
+
                     </script>
- 
+  -->
                      <body>
                       
-                      <nav class="navbar border-0" style="
-                        background-color: rgba(18, 15, 34, 0.5); "
-                         data-bs-theme="dark" >    
-                         
-                         <div class="container-fluid">
+                      <nav class="navbar border-0" style="background-color: rgba(18, 15, 34, 0.5);" data-bs-theme="dark">
+                        <div class="container-fluid">
                           <a class="navbar-brand" href="#">
                             <img src="./src/Photos/lx.png" alt="Logo" width="30" height="35" class="d-inline-block align-text-top">
-                            
                           </a>
-                          <button class="navbar-toggler  ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                           </button>
                           <div class="collapse navbar-collapse" id="navbarText">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-auto">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                               <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                               </li>
@@ -1510,19 +1523,32 @@
                                 <a class="nav-link" href="#Registernow">Register now</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#paricipation">Participation</a>
+                                <a class="nav-link" href="#termsandcond">Terms</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#termsandcond">Terms </a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="#contactus ">Contact</a>
+                                <a class="nav-link" href="#contactus">Contact</a>
                               </li>
                             </ul>
-                            
                           </div>
                         </div>
                       </nav>
+                      
+                      <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                          const navbarCollapse = document.getElementById('navbarText'); // Navbar collapse element
+                          const navLinks = document.querySelectorAll('.nav-link'); // All navbar links
+                      
+                          // Close the navbar when a link is clicked
+                          navLinks.forEach((link) => {
+                            link.addEventListener('click', () => {
+                              if (navbarCollapse.classList.contains('show')) {
+                                const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true }); // Collapse the navbar
+                              }
+                            });
+                          });
+                        });
+                      </script>
+                      
                       <div style="position: relative;">
                         <img src="src/Prizes.png" 
                              alt="Image description"
@@ -2293,7 +2319,7 @@
                   </h3>
                 </a>
               </div> -->
-              <h2
+              <h2 id="contactus"
                 class="text_57fd24a535e2 has-text-color has-background has-text-align-left yt_text_background wp-block-heading"
                 style="
                   text-transform: none;
@@ -2438,15 +2464,15 @@
           </p>
           </div>
 
-          <div
+          <div 
             class="wp-block-group container_8bbce01c5e8a is-layout-flow wp-block-group-is-layout-flow"
           >
             <h2
-              class="text_0b96823e2670 has-text-color has-background has-text-align-left yt_text_background wp-block-heading" id="paricipation"
+              class="text_0b96823e2670 has-text-color has-background has-text-align-left yt_text_background wp-block-heading" 
               style="
                 text-transform: none;
                 font-style: normal;
-                font-size: 27.5px;0
+                font-size: 27.5px;
                 font-weight: 400;
                 letter-spacing: -0.5px;
                 color: #00000000;
