@@ -1229,7 +1229,7 @@ section{
   z-index: 3;
   position: absolute !important;
   left: 0px;
-  top: 0px;
+  top: -690px;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
